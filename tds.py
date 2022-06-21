@@ -7,11 +7,13 @@ try:
 	import requests
 except:
 	os.system("pip3 install requests")
+	import requests
 
 try:
 	from pystyle import Colors, Colorate, Write, Center, Add, Box
 except:
 	os.system("pip3 install pystyle")
+	from pystyle import Colors, Colorate, Write, Center, Add, Box
 
 headers = {
 	'authority': 'traodoisub.com',
