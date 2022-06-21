@@ -1,5 +1,6 @@
 import os
-from time import sleep, gmtime, strftime
+from time import sleep
+from datetime import datetime
 
 os.environ['TZ'] = 'Asia/Ho_Chi_Minh'
 
@@ -239,12 +240,12 @@ if check_log == 'success':
 			for job in list_job['data']:
 				uid = job['id']
 				link = job['link']
-				os.system(f'am start -a android.intent.action.VIEW -d {link}')
+				os.system(f'termux-open-url {link}')
 				check_duyet = duyet_job(type_duyet, token_tds, uid)
 				
 				if check_duyet != 'error':
 					dem_tong += 1
-					t_now = strftime("%H:%M:%S", gmtime())
+					t_now = datetime.now().strftime("%H:%M:%S")
 					print(f'{Colors.yellow}[{dem_tong}] {Colors.red}| {Colors.cyan}{t_now} {Colors.red}| {Colors.pink}{type_type} {Colors.red}| {Colors.light_gray}{uid}')
 
 					if check_duyet > 9:
@@ -255,7 +256,8 @@ if check_log == 'success':
 				if dem_tong == max_job:
 					break
 				else:
-					sleep(delay)
+					for i in range(delay,-1,-1):
+            			print(Colors.green + 'Vui lòng đợi: '+str(i)+' giây',end=('\r'))
 
 		if dem_tong == max_job:
 			print(f'{Colors.green}Hoàn thành {max_job} nhiệm vụ!')
