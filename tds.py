@@ -26,7 +26,7 @@ def login_tds(token):
 	try:
 		r = requests.get('https://traodoisub.com/api/?fields=profile&access_token='+token, headers=headers, timeout=5).json()
 		if 'success' in r:
-			os.system('@clear')
+			os.system('clear')
 			print(Colors.green + f"Đăng nhập thành công!\nUser: {Colors.yellow + r['data']['user'] + Colors.green} | Xu hiện tại: {Colors.yellow + r['data']['xu']}")
 			return 'success'
 		else:
@@ -72,7 +72,7 @@ def check_tiktok(id_tiktok, token):
 	try:
 		r = requests.get('https://traodoisub.com/api/?fields=tiktok_run&id='+id_tiktok+'&access_token='+token, headers=headers, timeout=5).json()
 		if 'success' in r:
-			os.system('@clear')
+			os.system('clear')
 			print(Colors.green + f"{r['data']['msg']}|ID: {Colors.yellow + r['data']['id'] + Colors.green}")
 			return 'success'
 		else:
@@ -82,7 +82,7 @@ def check_tiktok(id_tiktok, token):
 		return 'error'
 
 
-os.system('@clear')
+os.system('clear')
 banner = r'''
 ████████╗██████╗ ███████╗
 ╚══██╔══╝██╔══██╗██╔════╝
@@ -134,13 +134,13 @@ while True:
 					if choice in [1,2]:
 						break
 					else:
-						os.system('@clear')
+						os.system('clear')
 						print(Colors.red + f"Lỗi lựa chọn!! Chỉ nhập 1 hoặc 2\n")
 				except:
-					os.system('@clear')
+					os.system('clear')
 					print(Colors.red + f"Lỗi lựa chọn!! Chỉ nhập 1 hoặc 2\n")
 			
-			os.system('@clear')
+			os.system('clear')
 			if choice == 1:
 				break
 			else:
@@ -153,7 +153,7 @@ while True:
 			break
 	else:
 		sleep(1)
-		os.system('@clear')
+		os.system('clear')
 
 if check_log == 'success':
 	#Nhập user tiktok
@@ -169,10 +169,10 @@ if check_log == 'success':
 		if check_log == 'success':
 			break
 		elif check_log == 'error_token':
-			os.system('@clear')
+			os.system('clear')
 			print(Colors.red + f"ID tiktok chưa được thêm vào cấu hình, vui lòng thêm vào cấu hình rồi nhập lại!\n")
 		else:
-			os.system('@clear')
+			os.system('clear')
 			print(Colors.red + f"Lỗi sever vui lòng nhập lại!\n")
 
 	#Lựa chọn nhiệm vụ		
@@ -183,10 +183,10 @@ if check_log == 'success':
 			if choice in [1,2]:
 				break
 			else:
-				os.system('@clear')
+				os.system('clear')
 				print(Colors.red + f"Lỗi lựa chọn!! Chỉ nhập 1 hoặc 2\n")
 		except:
-			os.system('@clear')
+			os.system('clear')
 			print(Colors.red + f"Lỗi lựa chọn!! Chỉ nhập 1 hoặc 2\n")
 
 	#Nhập delay nhiệm vụ
@@ -196,10 +196,10 @@ if check_log == 'success':
 			if delay > 1:
 				break
 			else:
-				os.system('@clear')
+				os.system('clear')
 				print(Colors.red + f"Delay tối thiểu là 3\n")
 		except:
-			os.system('@clear')
+			os.system('clear')
 			print(Colors.red + f"Vui lòng nhập một số > 2\n")
 
 	#Nhập max nhiệm vụ
@@ -209,13 +209,13 @@ if check_log == 'success':
 			if max_job > 9:
 				break
 			else:
-				os.system('@clear')
+				os.system('clear')
 				print(Colors.red + f"Tối thiểu là 10\n")
 		except:
-			os.system('@clear')
+			os.system('clear')
 			print(Colors.red + f"Vui lòng nhập một số > 9\n")
 
-	os.system('@clear')
+	os.system('clear')
 
 	if choice == 1:
 		type_load = 'tiktok_follow'
