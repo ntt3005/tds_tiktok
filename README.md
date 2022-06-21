@@ -5,3 +5,6 @@ Tool auto tiktok traodoisub
 - apt update
 - pkg update
 - pkg install python
+
+# Lệnh chạy
+python tds.py
