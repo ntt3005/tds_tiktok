@@ -257,7 +257,7 @@ if check_log == 'success':
 					break
 				else:
 					for i in range(delay,-1,-1):
-            			print(Colors.green + 'Vui lòng đợi: '+str(i)+' giây',end=('\r'))
+						print(Colors.green + 'Vui lòng đợi: '+str(i)+' giây',end=('\r'))
 
 		if dem_tong == max_job:
 			print(f'{Colors.green}Hoàn thành {max_job} nhiệm vụ!')
