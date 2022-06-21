@@ -239,7 +239,7 @@ if check_log == 'success':
 			for job in list_job['data']:
 				uid = job['id']
 				link = job['link']
-				os.system(f'termux-open-url {link}')
+				os.system(f'am start -a android.intent.action.VIEW -d {link}')
 				check_duyet = duyet_job(type_duyet, token_tds, uid)
 				
 				if check_duyet != 'error':
