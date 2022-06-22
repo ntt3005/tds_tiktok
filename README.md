@@ -1,5 +1,5 @@
 # tds_tiktok
-Tool auto tiktok traodoisub free
+Tool auto tiktok traodoisub android free
 
 # Lệnh setup Tool
 - apt update
@@ -10,5 +10,13 @@ Tool auto tiktok traodoisub free
 - cd tds_tiktok
 - python tds.py
 
+# Công cụ kết hợp
+- Termux
+- Macrorify
+- Tiktok hoặc tiktok lite
+
 # Lệnh chạy
 python tds.py
+
+# Video hướng dẫn
+Đang cập nhật
